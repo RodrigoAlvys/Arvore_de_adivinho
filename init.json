@@ -1,0 +1,103 @@
+{
+    "type": "question",
+    "question": "O animal é vertebrado?",
+    "keyword": "vertebrado",
+    "yes": {
+        "type": "question",
+        "question": "O animal vive na água?",
+        "keyword": "aquatico",
+        "yes": {
+            "type": "question",
+            "question": "O animal tem escamas?",
+            "keyword": "escamas",
+            "yes": {
+                "type": "answer",
+                "answer": "Peixe"
+            },
+            "no": {
+                "type": "question",
+                "question": "O animal tem pelos?",
+                "keyword": "pelos",
+                "yes": {
+                    "type": "answer",
+                    "answer": "Foca"
+                },
+                "no": {
+                    "type": "answer",
+                    "answer": "Golfinho"
+                }
+            }
+        },
+        "no": {
+            "type": "question",
+            "question": "O animal tem penas?",
+            "keyword": "penas",
+            "yes": {
+                "type": "question",
+                "question": "O animal voa?",
+                "keyword": "voa",
+                "yes": {
+                    "type": "answer",
+                    "answer": "Águia"
+                },
+                "no": {
+                    "type": "answer",
+                    "answer": "Avestruz"
+                }
+            },
+            "no": {
+                "type": "question",
+                "question": "O animal é mamífero?",
+                "keyword": "mamifero",
+                "yes": {
+                    "type": "answer",
+                    "answer": "Cachorro"
+                },
+                "no": {
+                    "type": "answer",
+                    "answer": "Cobra"
+                }
+            }
+        }
+    },
+    "no": {
+        "type": "question",
+        "question": "O animal é invertebrado?",
+        "keyword": "invertebrado",
+        "yes": {
+            "type": "question",
+            "question": "O animal tem asas?",
+            "keyword": "asas",
+            "yes": {
+                "type": "question",
+                "question": "O animal tem 6 patas?",
+                "keyword": "seis_patas",
+                "yes": {
+                    "type": "answer",
+                    "answer": "Abelha"
+                },
+                "no": {
+                    "type": "answer",
+                    "answer": "Borboleta"
+                }
+            },
+            "no": {
+                "type": "question",
+                "question": "O animal tem concha?",
+                "keyword": "concha",
+                "yes": {
+                    "type": "answer",
+                    "answer": "Caracol"
+                },
+                "no": {
+                    "type": "answer",
+                    "answer": "Minhoca"
+                }
+            }
+        },
+        "no": {
+            "type": "answer",
+            "answer": "Não conheço este animal"
+        }
+    }
+}
