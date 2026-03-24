@@ -1,61 +1,68 @@
 {
     "type": "question",
     "question": "O animal é vertebrado?",
-    "keyword": "vertebrado",
+    "keyword": "0_vertebrado",
     "yes": {
         "type": "question",
         "question": "O animal vive na água?",
-        "keyword": "aquatico",
+        "keyword": "1_aquatico",
         "yes": {
             "type": "question",
             "question": "O animal tem escamas?",
-            "keyword": "escamas",
+            "keyword": "2_escamas",
             "yes": {
                 "type": "answer",
-                "answer": "Peixe"
+                "answer": "Peixe",
+                "keyword": "3_peixe"
             },
             "no": {
                 "type": "question",
                 "question": "O animal tem pelos?",
-                "keyword": "pelos",
+                "keyword": "3_pelos",
                 "yes": {
                     "type": "answer",
-                    "answer": "Foca"
+                    "answer": "Foca",
+                    "keyword": "4_foca"
                 },
                 "no": {
                     "type": "answer",
-                    "answer": "Golfinho"
+                    "answer": "Golfinho",
+                    "keyword": "4_golfinho"
                 }
             }
         },
         "no": {
             "type": "question",
             "question": "O animal tem penas?",
-            "keyword": "penas",
+            "keyword": "2_penas",
             "yes": {
                 "type": "question",
                 "question": "O animal voa?",
-                "keyword": "voa",
+                "keyword": "3_voa",
                 "yes": {
                     "type": "answer",
-                    "answer": "Águia"
+                    "answer": "Águia",
+                    "keyword": "4_aguia"
                 },
                 "no": {
                     "type": "answer",
-                    "answer": "Avestruz"
+                    "answer": "Avestruz",
+                    "keyword": "4_avestruz"
                 }
             },
             "no": {
                 "type": "question",
                 "question": "O animal é mamífero?",
-                "keyword": "mamifero",
+                "keyword": "3_mamifero",
                 "yes": {
                     "type": "answer",
-                    "answer": "Cachorro"
+                    "answer": "Cachorro",
+                    "keyword": "4_cachorro"
                 },
                 "no": {
                     "type": "answer",
-                    "answer": "Cobra"
+                    "answer": "Cobra",
+                    "keyword": "4_cobra"
                 }
             }
         }
@@ -63,41 +70,46 @@
     "no": {
         "type": "question",
         "question": "O animal é invertebrado?",
-        "keyword": "invertebrado",
+        "keyword": "1_invertebrado",
         "yes": {
             "type": "question",
             "question": "O animal tem asas?",
-            "keyword": "asas",
+            "keyword": "2_asas",
             "yes": {
                 "type": "question",
                 "question": "O animal tem 6 patas?",
-                "keyword": "seis_patas",
+                "keyword": "3_seis_patas",
                 "yes": {
                     "type": "answer",
-                    "answer": "Abelha"
+                    "answer": "Abelha",
+                    "keyword": "4_abelha"
                 },
                 "no": {
                     "type": "answer",
-                    "answer": "Borboleta"
+                    "answer": "Borboleta",
+                    "keyword": "4_borboleta"
                 }
             },
             "no": {
                 "type": "question",
                 "question": "O animal tem concha?",
-                "keyword": "concha",
+                "keyword": "3_concha",
                 "yes": {
                     "type": "answer",
-                    "answer": "Caracol"
+                    "answer": "Caracol",
+                    "keyword": "4_caracol"
                 },
                 "no": {
                     "type": "answer",
-                    "answer": "Minhoca"
+                    "answer": "Minhoca",
+                    "keyword": "4_minhoca"
                 }
             }
         },
         "no": {
             "type": "answer",
-            "answer": "Não conheço este animal"
+            "answer": "Não conheço este animal",
+            "keyword": "2_desconhecido"
         }
     }
 }

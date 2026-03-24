@@ -3,20 +3,20 @@ from time import sleep
 import json
 
 class Node:
-    def __init__(self, parent=None):
+    def __init__(self, keyword, parent=None):
         self.parent = parent
+        self.keyword = keyword
 
 class Question(Node):
     def __init__(self, question, keyword, parent=None, yes=None, no=None):
-        super().__init__(parent)
+        super().__init__(keyword, parent)
         self.question = question
-        self.keyword = keyword
         self.yes = yes
         self.no = no
 
 class Answer(Node):
-    def __init__(self, parent, answer):
-        super().__init__(parent)
+    def __init__(self, parent, answer, keyword):
+        super().__init__(keyword, parent)
         self.answer = answer
 
 class Akinator:
@@ -38,7 +38,11 @@ class Akinator:
                 node.yes = build_tree(node_data['yes'], node)
                 node.no = build_tree(node_data['no'], node)
             else:  # answer
-                node = Answer(parent=parent, answer=node_data['answer'])
+                node = Answer(
+                        parent=parent, 
+                        answer=node_data['answer'], 
+                        keyword=node_data['keyword']
+                        )
                 self.leaf.append(node)
             return node
     

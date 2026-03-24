@@ -35,18 +35,12 @@ while True:
         temp_DFS = end-inic
         print(f"BFS tempo: {temp_BFS}\nCaminho:")
         for y in test_BFS:
-            if isinstance(y, Question):
                 print(f"{y.keyword} -> ", end="")
-            elif isinstance(y, Answer):
-                print(f"{y.answer} -> ", end="")
-        print("end\n")
+        print(f"end\n{len(test_BFS)} nós foram explorados.\n")
         print(f"DFS tempo: {temp_DFS}\nCaminho:")
         for y in test_DFS:
-            if isinstance(y, Question):
                 print(f"{y.keyword} -> ", end="")
-            elif isinstance(y, Answer):
-                print(f"{y.answer} -> ", end="")
-        print("end")
+        print(f"end\n{len(test_DFS)} nós foram explorados.\n")
         input("...")
     elif x == "3":
         break
