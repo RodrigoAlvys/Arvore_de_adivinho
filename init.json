@@ -55,9 +55,19 @@
                 "question": "O animal é mamífero?",
                 "keyword": "3_mamifero",
                 "yes": {
-                    "type": "answer",
-                    "answer": "Cachorro",
-                    "keyword": "4_cachorro"
+                    "type": "question",
+                    "question": "O animal é um canino??",
+                    "keyword": "4_canino",
+                    "yes":{
+                        "type": "answer",
+                        "answer": "Cachorro",
+                        "keyword": "5_cachorro"
+                    },
+                    "no": {
+                        "type": "answer",
+                        "answer": "Gato",
+                        "keyword": "5_gato"
+                    }
                 },
                 "no": {
                     "type": "answer",

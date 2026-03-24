@@ -45,7 +45,7 @@ while True:
     elif x == "3":
         break
     else:
-        print("\nPorfavor digite as opções no meu!")
+        print("\nPor favor digite as opções no menu!")
         input("...")
     print("\n\n\n")
 
