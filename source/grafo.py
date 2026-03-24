@@ -1,4 +1,5 @@
 from collections import deque
+from time import sleep
 import json
 
 class Node:
@@ -6,7 +7,7 @@ class Node:
         self.parent = parent
 
 class Question(Node):
-    def __init__(self, parent=None, question, keyword, yes=None, no=None):
+    def __init__(self, question, keyword, parent=None, yes=None, no=None):
         super().__init__(parent)
         self.question = question
         self.keyword = keyword
@@ -30,9 +31,9 @@ class Akinator:
         def build_tree(node_data, parent=None):
             if node_data['type'] == 'question':
                 node = Question(
-                    parent=parent,
                     question=node_data['question'],
-                    keyword=node_data['keyword']
+                    keyword=node_data['keyword'],
+                    parent=parent
                 )
                 node.yes = build_tree(node_data['yes'], node)
                 node.no = build_tree(node_data['no'], node)
@@ -68,5 +69,55 @@ class Akinator:
         lista = deque()
         recursive(lista, self.root)
         return lista
+    def start(self):
+        if self.root is None:
+            print("A árvore está vazia! porfavor utilize a função load_json para preenchê-la")
+            return
+        print("Seja bem vindo ao Akinator rudimentar!!\n")
+        print("Para começar, pense em um animal")
+        print(".")
+        sleep(1)
+        print(".")
+        sleep(1)
+        print(".")
+        sleep(1)
+        print("\n\nEstá pronto para responder as perguntas?")
+        print("Para sair basta digitar \"sair\"")
+        input("...")
 
+        pointer = self.root
+
+        while isinstance(pointer, Question):
+            x = ""
+            print(f"\n{pointer.question}")
+            print("Responda com s para sim ou n para não")
+            while x not in ["s", "n"]:
+                x = input("-> ").lower().strip()
+                if x == "sair":
+                    return
+                elif x not in ["s", "n"]:
+                    print("\nPor favor, digite s ou n\nSé deseja sair, digite \"sair\"")
+            if x == "s":
+                if pointer.yes is None:
+                    print("Erro! Árvore incompleta.")
+                    input("...")
+                    return
+                pointer = pointer.yes
+            else:
+                if pointer.no is None:
+                    print("Erro! Árvore incompleta.")
+                    input("...")
+                    return
+                pointer = pointer.no
+        if isinstance(pointer, Answer):
+            print("\n\n\n\n")
+            print("=x=" * 17)
+            print(f"\nO animal que você estava pensando é {pointer.answer}\n")
+            print("=x=" * 17)
+            print("\nMuito obrigado por testar esse programa!!!")
+        else:
+            print("não foi possível chegar a uma conclução.")
+        input("enter para sair...")
+
+        
 
