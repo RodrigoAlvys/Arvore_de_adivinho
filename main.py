@@ -20,24 +20,38 @@ while True:
     print("Menu:\n1 - Akinator\n2 - BFS vs DFS\n3 - sair")
     x = str(input("-> ")).strip()
     if x == "1":
+        print("\n")
         akinator.start()
     elif x == "2":
+        print("\n")
         inic = perf_counter()
-        akinator.BFS()
+        test_BFS = akinator.BFS()
         end = perf_counter()
         temp_BFS = end-inic
 
         inic = perf_counter()
-        akinator.DFS()
+        test_DFS = akinator.DFS()
         end = perf_counter()
         temp_DFS = end-inic
-        print(f"BFS tempo: {temp_BFS}")
-        print(f"DFS tempo: {temp_DFS}")
+        print(f"BFS tempo: {temp_BFS}\nCaminho:")
+        for y in test_BFS:
+            if isinstance(y, Question):
+                print(f"{y.keyword} -> ", end="")
+            elif isinstance(y, Answer):
+                print(f"{y.answer} -> ", end="")
+        print("end\n")
+        print(f"DFS tempo: {temp_DFS}\nCaminho:")
+        for y in test_DFS:
+            if isinstance(y, Question):
+                print(f"{y.keyword} -> ", end="")
+            elif isinstance(y, Answer):
+                print(f"{y.answer} -> ", end="")
+        print("end")
         input("...")
     elif x == "3":
         break
     else:
-        print("Porfavor digite as opções no meu!")
+        print("\nPorfavor digite as opções no meu!")
         input("...")
     print("\n\n\n")
 
